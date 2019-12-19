@@ -1,6 +1,6 @@
-package eg2;
+package override_objectclass;
 
-public class Player extends Person{// is-a relationship
+public class Player {
 	private String teamName;
 	private long score;
 	
@@ -8,8 +8,7 @@ public class Player extends Person{// is-a relationship
 		System.out.println("MmHmM");
 	}
 	
-	public Player(int id, String name, String teamName, long score) {
-		super(id, name);
+	public Player(String teamName, long score) {
 		this.teamName = teamName;
 		this.score = score;
 	}
@@ -33,7 +32,16 @@ public class Player extends Person{// is-a relationship
 	public void printPlayer() {
 		System.out.println("Team Name: " + teamName);
 		System.out.println("Score: " + score);
-		System.out.println("ID: " + this.getId());
-		System.out.println("Name: " + this.getName());
+	}
+	
+	@Override
+	public String toString() {
+		return ("Hello " + teamName);
+	}
+	
+	@Override
+	public boolean equals(Object o) {
+		Player p = (Player)o;
+		if (this.score == p.score) {return true;}else {return false;}
 	}
 }
