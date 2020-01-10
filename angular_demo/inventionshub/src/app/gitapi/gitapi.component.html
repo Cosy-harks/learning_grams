@@ -1,0 +1,16 @@
+<p>gitapi works!</p>
+<div>
+	<h2>Git Users</h2>
+	<table>
+		<tr>
+			<td>ID</td>
+			<td>Login name</td>
+			<td>Avatar</td>
+		</tr>
+		<tr *ngFor="let user of users">
+			<td>{{user.id}}</td>
+			<td>{{user.login}}</td>
+			<td><img [src]=user.avatar_url style="width:1400px; height:100px"></td>
+		</tr>
+	</table>
+</div>
