@@ -3,6 +3,9 @@
 # Compiled class file
 *.class
 
+# settings
+/.settings/*
+
 # Log file
 *.log*
 
