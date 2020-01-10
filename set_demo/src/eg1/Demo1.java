@@ -55,7 +55,7 @@ public class Demo1 {
 		ts.add("JAVA");
 		ts.add("Hmm?");
 		ts.add("HI");
-		ts.add("null");
+		ts.add("\"null\"");
 		//ts.add(null);
 		
 		

@@ -91,7 +91,8 @@ public class Snake {
 		for (int i = pos.size() - 1; i > 0; i--)
 		{
 			// gets the pair's position ahead of it
-			pos.setElementAt(pos.elementAt(i - 1), i);
+			int tmp[] = {pos.elementAt(i - 1)[0], pos.elementAt(i - 1)[1], pos.elementAt(i - 1)[2]};
+			pos.setElementAt(tmp, i);
 		}
 		// This makes for an interesting game
 		//pos[pos.size() - 1].first = pos[0].first;

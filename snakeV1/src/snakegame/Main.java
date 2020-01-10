@@ -1,29 +1,28 @@
 package snakegame;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Iterator;
 import java.util.Scanner;
 
 public class Main {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
 		// Creates an object instance of SnakeGame
-		Scanner myScan;
-		myScan = new Scanner(System.in);
-		myScan.useDelimiter("");
 		SnakeGame g = new SnakeGame();
 		char play = 'y';
-		
+		new BufferedReader(new InputStreamReader(System.in)).readLine();
 		do {
 			g.play();
 			//delete g;
 			g = new SnakeGame();
-			myScan.next();
 			// Sets up the game to be played
 			
 			System.out.println("\nDo you want to play again(y/n)?");
-			play = myScan.next().charAt(0);
+			play = new BufferedReader(new InputStreamReader(System.in)).readLine().charAt(0);
 		} while (play == 'y');
-		myScan.close();
 		//delete g;
 		// Pauses display before exiting out.
 		//system("pause");

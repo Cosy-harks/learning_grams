@@ -1,20 +1,22 @@
 package snakegame;
 
 import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.lang.Thread;
 
 public class SnakeGame {
+
 	// initializes time between updates and
 	//playing to false because the game hasn't started
 	SnakeGame() {
 		sleepTime = 500;
 		playing = false;
-		myScan = new Scanner(System.in);
-		myScan.useDelimiter("");
 		theBoard = new Board();
 	}
 	// Enables the game
-	void play() {
+	void play() throws IOException {
 		// sets theSnake into board tiles and prints the board, tile by tile, to the console
 		theBoard.display();
 		
@@ -52,8 +54,8 @@ public class SnakeGame {
 	};
 
 	// reads each input from the keyboard
-	void getUserInput() {
-		theBoard.parseInput(myScan.next().charAt(0));
+	void getUserInput() throws IOException {
+		theBoard.parseInput(new BufferedReader(new InputStreamReader(System.in)).readLine().charAt(0));
 		//_kbhit == keyboard hit
 		/*if (_kbhit())
 		{
@@ -69,6 +71,4 @@ public class SnakeGame {
 	private boolean playing;
 	// The SnakeGame needs a board to play on
 	private Board theBoard;
-	
-	private Scanner myScan;
 }
